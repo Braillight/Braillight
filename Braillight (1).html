@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce al equipo detrás de Braillight.">
+    <meta name="keywords" content="tecnología, equipo, sobre nosotros">
+    <meta name="author" content="Tu nombre">
+    <title>Equipo - TechFuture</title>
+    <link rel="icon" href="ruta_a_tu_favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+     <!-- Barra de navegación -->
+     <nav class="navbar">
+        <div class="navbar-content">
+            <span class="brand">Braillight</span>
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        </div>
+    </nav>
+    <div class="dropdown-content" id="menu">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="about.html">Sobre Nosotros</a>
+        <a class="nav-link" href="guide.html">Guía</a>
+        <a class="nav-link" href="process.html">Proceso</a>
+        <a class="nav-link" href="contact.html">Contacto</a>
+        <a class="nav-link" href="team.html">Equipo</a>
+    </div>
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="text-center">Nuestro Equipo</h2>
+            <div class="row">
+                <div class="col-md-4 team-member">
+                    <img src="ruta_a_imagen.jpg" class="img-fluid rounded-circle mb-3" alt="Miembro del Equipo">
+                    <h3>Orel Guillen</h3>
+                    <p>Lider</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="ruta_a_imagen.jpg" class="img-fluid rounded-circle mb-3" alt="Miembro del Equipo">
+                    <h3>Jhonatan Traslaviña</h3>
+                    <p>Programador</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="ruta_a_imagen.jpg" class="img-fluid rounded-circle mb-3" alt="Miembro del Equipo">
+                    <h3>Jeyson Tocua, Stefany Huertas, Mariam Viracacha</h3>
+                    <p>Diseñadores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

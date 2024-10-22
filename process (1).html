@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descripción de la aplicación Braillight">
+    <meta name="keywords" content="tecnología, características, innovación">
+    <meta name="author" content="Tu nombre">
+    <title>Características - Braillight</title>
+    <link rel="icon" href="ruta_a_tu_favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style> 
+        /* Agregar márgenes generales */
+        .container {
+            margin: 20px; /* Margen general para todo el contenedor */
+        }
+
+        /* Márgenes específicos para títulos y párrafos */
+        h2, h3 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-left: 35px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <span class="brand">Braillight</span>
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        </div>
+    </nav>
+    <div class="dropdown-content" id="menu">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="about.html">Sobre Nosotros</a>
+        <a class="nav-link" href="guide.html">Guía</a>
+        <a class="nav-link" href="process.html">Proceso</a>
+        <a class="nav-link" href="contact.html">Contacto</a>
+        <a class="nav-link" href="team.html">Equipo</a>
+    </div>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="text-center">Proceso</h2>
+            <div class="row">
+                <div class="col-md-4 feature-item text-center">
+                    <p>En esta sección, explicaremos el funcionamiento del código que permite encender las matrices LED y mostrar los caracteres en Braille. También incluiremos imágenes del circuito y las conexiones realizadas, para que puedas ver cómo se integran los componentes y entender mejor el funcionamiento de nuestra aplicación.</p>
+                    
+                    <h3>Materiales</h3>
+                    <p>Para llevar a cabo la creación y montaje del circuito, utilizamos los siguientes materiales: Protoboard, Matriz LED 8x8 (MAX7219), Arduino y cable UTP. Estos elementos son esenciales para el funcionamiento óptimo de nuestro proyecto.</p>
+
+
+                    <h3>Conexiones y Componentes</h3>
+                    <p>El código utiliza dos componentes principales: la matriz 8x8 MAX7219 de LEDs y el módulo Bluetooth.</p>
+                    <ul>
+                        <li><strong>Matriz LED 8x8 (MAX7219)</strong>: Esto es una serie de pequeños puntos de luz que pueden encenderse o apagarse individualmente. En este caso, se utilizan dos matrices, cada una capaz de mostrar diferentes patrones.</li>
+                        <li><strong>Módulo Bluetooth (HC-06)</strong>: Este componente permite que el dispositivo se comunique de forma inalámbrica con un teléfono o una computadora. Esto significa que puedes enviar mensajes desde tu teléfono al dispositivo.</li>
+                    </ul>
+        
+                    <h4>Recepción de Datos</h4>
+                    <p>En la parte principal del programa, el dispositivo está atento para recibir mensajes a través del Bluetooth. Cuando se recibe un mensaje, se lee y se limita a un máximo de 16 caracteres, lo que significa que puedes enviar hasta 16 letras o números a la vez. Luego, se prepara la matriz de LEDs para mostrar estos nuevos caracteres.</p>
+        
+                    <h4>Manejo de Letras y Números</h4>
+                    <p>En el código, las letras y los números se representan mediante patrones específicos que se almacenan en un arreglo llamado <em>brailleAlphabet</em>. Este arreglo contiene 27 patrones, donde cada patrón se define utilizando un número binario de 6 bits.</p>
+                    <ul>
+                        <li><strong>Letras (A-Z)</strong>: Cada letra del alfabeto tiene un patrón único. Por ejemplo, la letra 'A' está representada por el patrón 0b000001, lo que significa que solo se enciende el primer LED en la matriz. La letra 'B' se representa como 0b000101, encendiendo el primer y tercer LED.</li>
+                        <li><strong>Números (0-9)</strong>: Los números también están representados por patrones específicos, usando dos bloques seguidos: uno con un patrón especial que define que el siguiente patrón es un número y el otro con el orden alfabético correspondiente (1=a, 2=b, etc.). Esto es crucial, ya que al enviar un número, el código primero envía el patrón representativo de los números y luego la letra correspondiente.</li>
+                    </ul>
+        
+                    <h4>Proceso de Visualización</h4>
+                    <p>El dispositivo lee la cadena de caracteres y se asegura de que no exceda los 16 caracteres. Si el programa detecta que el carácter es un dígito, se usa la función <em>displayBraille</em> para mostrar el símbolo y luego la letra correspondiente. La letra se determina a través de una operación que convierte el carácter en un índice para acceder al patrón adecuado en el arreglo <em>brailleAlphabet</em>.</p>
+                    <p>Por ejemplo, para el número '1', el índice será 'letter - 1', que corresponde a la letra 'A'. El programa activa primero el patrón del símbolo (0b111010) para el bloque correspondiente, luego incrementa el índice del bloque y muestra el patrón de la letra correspondiente. Para el número '4', el código garantiza que se muestre el símbolo seguido de la letra 'D'.</p>
+        
+                    <h4>Organización en Bloques</h4>
+                    <p>Los caracteres se organizan en dos matrices, donde cada matriz puede mostrar hasta 16 caracteres. El bloque se define por el índice de cada carácter:</p>
+                    <ul>
+                        <li>Si el índice del carácter es menor que 4, se utiliza la primera matriz.</li>
+                        <li>Si es 4 o mayor, se utilizarán ambas matrices, y si es 7 o mayor, se hará una división por cantidad. Los primeros 4 caracteres se mostrarán en la parte superior de la primera matriz, los siguientes 4 en la parte superior de la segunda matriz, los siguientes 4 en los bloques inferiores de la primera matriz y los 4 restantes en la parte inferior de la segunda matriz.</li>
+                    </ul>
+                    <p>Esto permite que se visualicen los caracteres de manera ordenada y clara en la matriz LED.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre las características innovadoras de nuestro proyecto en Braillight.">
+    <meta name="keywords" content="tecnología, características, innovación, braille, educación">
+    <meta name="author" content="Tu nombre">
+    <title>Guia - Braillight</title>
+    <link rel="icon" href="ruta_a_tu_favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> <!-- Nueva fuente -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Agregar márgenes generales */
+        .container {
+            margin: 20px; /* Margen general para todo el contenedor */
+        }
+
+        /* Márgenes específicos para títulos y párrafos */
+        h2, h3 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-left: 35px;
+        }
+    </style>
+    
+</head>
+<body> 
+    
+    
+     <!-- Barra de navegación -->
+     <nav class="navbar">
+        <div class="navbar-content">
+            <span class="brand">Braillight</span>
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        </div>
+    </nav>
+    <div class="dropdown-content" id="menu">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="about.html">Sobre Nosotros</a>
+        <a class="nav-link" href="guide.html">Guía</a>
+        <a class="nav-link" href="process.html">Proceso</a>
+        <a class="nav-link" href="contact.html">Contacto</a>
+        <a class="nav-link" href="team.html">Equipo</a>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="text-center">GUIA</h2>
+            <p><strong>BRAILLIGH</strong> es un proyecto innovador diseñado para fomentar la inclusión del lenguaje braille entre personas que no presentan discapacidad visual. El objetivo principal es que los usuarios aprendan braille a través de niveles interactivos y progresivos, utilizando una placa de matrices LED conectada a una aplicación móvil mediante un módulo Bluetooth. Esta conexión permite que los usuarios visualicen en la placa cada letra o símbolo braille que aprenden durante el curso.</p>
+            
+            <h3>¿Cómo Funciona?</h3>
+            <p>El proyecto se compone de dos partes principales:</p>
+            <ul>
+                <li><strong>Placa de Matrices LED</strong>: Un dispositivo físico con una matriz de LED diseñada para representar letras, números y palabras en braille. Este dispositivo recibe señales desde la aplicación móvil y las convierte en patrones visibles que corresponden al alfabeto braille.</li>
+                <li><strong>Aplicación BRAILLIGH</strong>: Una aplicación móvil que envía las señales a la placa mediante un módulo Bluetooth. La aplicación está dividida en distintos niveles, cada uno de los cuales enseña progresivamente aspectos del lenguaje braille. Además, los usuarios tienen la posibilidad de seleccionar el nivel en el que desean comenzar, dependiendo de su conocimiento previo del sistema braille.</li>
+            </ul>
+
+            <h3>Niveles de Aprendizaje</h3>
+            <p>La enseñanza del braille en BRAILLIGH está estructurada en 10 niveles los cuales también incluyen 8 subniveles cada uno donde se realiza una enseñanza más detallada. Los usuarios pueden elegir en qué nivel desean comenzar según sus conocimientos previos:</p>
+            <ul>
+                <li><strong>Nivel 1 - Vocales</strong>: En este primer nivel, los usuarios aprenden a reconocer y representar las vocales (a, e, i, o, u) en braille.</li>
+                <li><strong>Nivel 2 - Primera mitad del abecedario</strong>: Este nivel cubre las letras de la "a" a la "m".</li>
+                <li><strong>Nivel 3 - Segunda mitad del abecedario</strong>: Se continúa con las letras de la "n" a la "z".</li>
+                <li><strong>Nivel 4 - Formaciones de palabras de 3 caracteres</strong>: Los usuarios comienzan a formar palabras cortas de 3 letras.</li>
+                <li><strong>Nivel 5 - Caracteres en general</strong>: En este nivel, se introducen caracteres especiales y más letras para completar el abecedario.</li>
+                <li><strong>Nivel 6 - Palabras de 4 a 6 letras</strong>: Se trabaja con palabras más largas, entre 4 y 6 letras.</li>
+                <li><strong>Nivel 7 - Números</strong>: Introducción al sistema numérico en braille.</li>
+                <li><strong>Nivel 8 - Dos palabras</strong>: Formación de frases cortas con dos palabras.</li>
+                <li><strong>Nivel 9 - Más de dos palabras</strong>: Construcción de frases más complejas.</li>
+                <li><strong>Nivel 10 - Lecturas generales</strong>: Lecturas completas, permitiendo a los usuarios leer párrafos o textos sencillos.</li>
+            </ul>
+
+            <h3>Flexibilidad de Aprendizaje</h3>
+            <p>Uno de los puntos clave de <strong>BRAILLIGH</strong> es que cada usuario puede comenzar en el nivel que considere adecuado según sus conocimientos previos. Si el usuario ya tiene experiencia con las letras en braille, puede saltar directamente a niveles más avanzados, como la formación de palabras o números. Esto permite personalizar el proceso de aprendizaje y adaptarlo a las necesidades individuales.</p>
+
+            <h3>Objetivo del Proyecto</h3>
+            <p><strong>BRAILLIGH</strong> no solo tiene como objetivo enseñar braille a personas sin discapacidad visual, sino también fomentar la inclusión y la empatía hacia la comunidad con discapacidad visual. Al conocer el lenguaje braille, los usuarios pueden contribuir a una sociedad más inclusiva, donde la comunicación entre personas con y sin discapacidad visual sea más accesible.</p>
+        </div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

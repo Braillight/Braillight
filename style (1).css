@@ -1,0 +1,385 @@
+ /* Estilos generales */ 
+:root {
+    --primary-color: #5c0a97; /* Morado oscuro */
+    --text-color: #FFFFFF;    /* Blanco para el texto */
+    --background-color: #EADCF0; /* Fondo lavanda claro */
+    --accent-color: #FFD700;     /* Dorado para acentos */
+}
+
+body {
+    font-family:'Shalma', sans-serif; /* Cambiado a la nueva fuente */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px 20px; /* Ajusta la altura y ancho aquí */
+}
+
+.navbar-content {
+    display: flex; /* Usar flexbox para la alineación */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Alinear verticalmente */
+}
+
+.brand {
+    font-size: 45px; /* Tamaño del texto del título */
+    color: var(--text-color);
+    text-decoration: none;
+    font-family:'Pacifico', cursive; /* Usa 'cursive' como respaldo */
+}
+
+.menu-icon {
+    color: var(--text-color);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Estilo para el menú desplegable */ 
+.dropdown-content {
+    display: none; /* Ocultar por defecto */
+    position: absolute; /* Posición absoluta respecto al contenedor padre */
+    background-color: var(--primary-color);
+    min-width: 160px; /* Ancho mínimo */
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+    top: 10%; /* Posición debajo del contenedor padre */
+    right: 0; /* Alinea el menú al borde derecho del contenedor padre */
+}
+
+.dropdown-content .nav-link {
+    color: var(--text-color);
+    padding: 12px 16px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
+    display: block; /* Se comporta como bloque */
+}
+
+.dropdown-content .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Color de fondo al pasar el mouse */
+}
+
+/* Mostrar el menú cuando se activa */
+.menu-icon:hover + .dropdown-content,
+.dropdown-content:hover {
+    display: block; /* Mostrar menú al pasar el mouse sobre el ícono */
+}
+
+/* Sección de Inicio */
+.home {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.home-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.home-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Home Section */
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/#d5c1de.jpg') no-repeat center center/cover; /* Ruta actualizada */
+    position: relative;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/braille.jpg') no-repeat center center/cover; /* Ruta actualizada */
+}
+
+.home .container {
+    position: relative;
+    z-index: 1;
+}
+
+.home-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1.2s ease-out;
+}
+
+.home-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.btn-home {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.btn-home:hover {
+    background: var(--primary-color);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid var(--text-color);
+    border-right: 2px solid var(--text-color);
+    transform: rotate(45deg);
+    margin-bottom: -4px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.about .about-text {
+    margin-bottom: 2rem;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    animation: fadeInLeft 1.2s ease-out;
+}
+
+.about .btn-primary {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+    animation: fadeInLeft 1.5s ease-out;
+}
+
+.about .btn-primary:hover {
+    background: var(--accent-color);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    animation: fadeInRight 1.5s ease-out;
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 0;
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-out;
+}
+
+.feature-item {
+    margin-bottom: 2rem;
+}
+
+.feature-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #ddd;
+    animation: fadeInUp 1.6s ease-out;
+}
+
+.feature-item:hover i {
+    transform: scale(1.2);
+}
+
+/* Carrusel */
+.carousel {
+    margin-top: 20px; /* Espacio arriba del carrusel */
+}
+
+.carousel img {
+    max-height: 400px; /* Limitar la altura máxima de las imágenes */
+    width: 100%; /* Asegurar que las imágenes se ajusten al contenedor */
+    object-fit: cover; /* Mantener la proporción de la imagen */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para las leyendas */
+    padding: 10px; /* Padding para mejorar la legibilidad */
+}
+
+/* Team Section */
+.team {
+    padding: 5rem 0;
+    background: var(--background-color);
+    color: var(--primary-color);
+}
+
+.team h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-out;
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.team-member:hover img {
+    transform: scale(1.1);
+}
+
+ /* Contact Section */
+.contact {
+    padding: 5rem 0;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding-top: calc(5rem + 4rem); /* Añadir espacio suficiente para la barra de navegación fija */
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-out;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.btn-outline-light {
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: background 0.3s ease, color 0.3s ease;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+.btn-outline-light:hover {
+    background: var(--text-color);
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.footer .social-icons {
+    margin-top: 1rem;
+}
+
+.footer .social-icons a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: var(--accent-color);
+}
